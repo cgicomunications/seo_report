@@ -1,0 +1,71 @@
+<%= link_to '<i class="fa fa-file fa-fw" aria-hidden="true"></i> Online Report'.html_safe,  display_path(phase: "4", id: @phase4.id ), class: "button secondary float-right", :target => '_blank' %>
+
+<div class="page-title">
+    <h1><%= @phase5.created_at.to_formatted_s(:long)  %></h1>
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li><%= link_to 'Businesses',  businesses_path %></li>
+        <li>
+            <%= link_to @business.name, business_path(@business) %>
+        </li>
+        <li>
+          <span class="show-for-sr">Current: </span> Phase 5
+        </li>
+      </ul>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="medium-8 columns">
+        <div class="callout card">
+            <div class="callout-header">
+                <% if (current_user.userrank == 'admin') || (current_user.userrank == 'seo')  %>
+                    <div class ="float-right">
+                        <%= link_to '<i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Edit'.html_safe,  edit_business_phase5_path(@business, @phase5.id), class: "button secondary small" %>
+                        <%= link_to '<i class="fa fa-trash fa-fw" aria-hidden="true"></i> Delete'.html_safe, "#", method: :delete, class: "button secondary small",  data: { confirm: "You sure?" } %>
+                    </div>
+                <% end %>
+
+                <h4><i class="fa fa-puzzle-piece fa-fw" aria-hidden="true"></i> Phase 5</h4>
+            </div>
+            <div class="callout-table">
+
+                <table>
+                    <tr>
+                        <th class="narrow">Does your website have a blog?</th>
+                        <td><%= @phase5.blog %></td>
+                    </tr>
+                    <tr>
+                        <th class="narrow">Does your website have a video?</th>
+                        <td><%= @phase5.video %></td>
+                    </tr>
+                    <tr>
+                        <th class="narrow">Does your website have an SSL certificate?</th>
+                        <td><%= @phase5.sslcertificate %></td>
+                    </tr>
+                    <tr>
+                        <th class="narrow">Do you have any duplicate sites or URLs being indexed by the search engines?</th>
+                        <td><%= @phase5.duplicateSites %></td>
+                    </tr>
+                    <tr>
+                        <th class="narrow">Is your navigation user friendly?</th>
+                        <td><%= @phase5.friendlyNav %></td>
+                    </tr>
+                    <tr>
+                        <th class="narrow">Does your website have meta keywords?</th>
+                        <td><%= @phase5.metaKeywords %></td>
+                    </tr>
+                    <tr>
+                        <th class="narrow">Does your website have a click to call button on a mobile device?</th>
+                        <td><%= @phase5.clickToCall %></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="medium-4 columns">
+        <%= render 'scoreCard' %>
+    </div>
+</div>

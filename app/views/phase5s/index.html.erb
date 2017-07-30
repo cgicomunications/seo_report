@@ -1,0 +1,56 @@
+<div class="page-title">
+    <h1>Phase 5</h1>
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li>Phase 5</li>
+        <li>
+          <span class="show-for-sr">Current: </span> All
+        </li>
+      </ul>
+    </nav>
+</div>
+
+<div class="callout card">
+    <div class="callout-header">
+        <h4>All Phase 5</h4>
+    </div>
+    <div class="callout-table">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Business Name</th>
+                    <th>Blog</th>
+                    <th>Video</th>
+                    <th>SSL Certificate</th>
+                    <th>Duplicate Site Free</th>
+                    <th>Friendly Nav</th>
+                    <th>Meta Keywords</th>
+                    <th>Click To Call</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @phase5s.each do |phase5| %>
+                    <% @business = Business.where(:id => phase5.business_id).first %>
+
+                    <tr>
+                        <td><%= link_to phase5.created_at.to_formatted_s(:short),business_phase5_path(@business, phase5)  %></td>
+                        <td>
+                            <%= @business.name %>
+                        </td>
+                        <td><%= phase5.blog %></td>
+                        <td><%= phase5.video %></td>
+                        <td><%= phase5.sslcertificate %></td>
+                        <td><%= phase5.duplicateSites %></td>
+                        <td><%= phase5.friendlyNav %></td>
+                        <td><%= phase5.metaKeywords %></td>
+                        <td><%= phase5.clickToCall %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+
+        </table>
+    </div>
+</div>

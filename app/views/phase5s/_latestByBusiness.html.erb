@@ -1,0 +1,26 @@
+ <div class="callout card">
+
+    <div class="callout-header">
+        <% if (current_user.userrank == 'admin') || (current_user.userrank == 'seo')  %>
+            <%= link_to '<i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i> New'.html_safe, new_business_phase5_path(@business), class: "button secondary small float-right" %>
+        <% end %>
+        <h4><i class="fa fa-pie-chart fa-fw" aria-hidden="true"></i> Phase 5</h4>
+    </div>
+    <div class="callout-table">
+        <table>
+
+            <% @phase5s = @business.phase5s.all.reverse %>
+            <% @phase5s.each do |phase5| %>
+               <tr>
+                    <td>
+                        <%= phase5.created_at.to_formatted_s(:long) %>
+                    </td>
+                    <td class="text-right">
+                        <%= link_to '<i class="fa fa-chevron-right fa-fw"></i>'.html_safe, business_phase5_path(@business, phase5) %>
+                    </td>
+                </tr>
+             <% end %>
+
+        </table>
+    </div>
+</div>

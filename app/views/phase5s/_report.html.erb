@@ -1,0 +1,151 @@
+<% positiveScore = 0 %>
+<% fromScore = 0 %>
+<% @phase5 = Phase5.where(:id => params[:id]).first %>
+
+<div class="row lead-img"data-equalizer data-equalize-on="medium">
+    <div class="medium-3 columns burst" data-equalizer-watch></div>
+    <div class="medium-9 columns" data-equalizer-watch>
+        <h1 class="business-name"><%= Business.find(@phase5.business_id).name %></h1>
+        <p class="lead">Allow us to dig even deeper! During Phase 5 we will be looking for fresh content opportunities and ways to improve user experience.</p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="small-12 columns">
+        <h2 class="text-center">Analysis</h2>
+
+        <table class="scores">
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.blog == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.blog == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Does your website have a blog?</h4>
+                    <p>A blog is a great way to produce fresh content on a consistent basis. You can use your blog as a way to increase rankings for keywords that are not performing well, or as a way to engage visitors and provide educational content. Either way, if they are reading your blog, they are spending more time on our site which leads to better performance in the search engines. Also, if you can get people to share your blog, you become more credible through backlinks.</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.video == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.video == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Does your website have a video?</h4>
+                    <p>Much like a blog, a video is a great way to engage your visitors, which relates to more time spent on your website, which equals better rankings! Videos also have a much higher click through rate than plain text and carry a heavy weight in Google's algorithm. And again, if someone shares your video, more backlinks!</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.sslcertificate == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.sslcertificate == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Does your website have an SSL certificate?</h4>
+                    <p>This is the difference between HTTP and HTTPS, which provides a mechanism to guarantee authenticity and protect any information being transferred over the internet. As of late, Google considers this to be a ranking factor. </p>
+                </td>
+            </tr>
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.duplicateSites == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.duplicateSites == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Do you have any duplicate sites or URLs being indexed by the search engines?</h4>
+                    <p>If your business has more than one website, there is a good chance you will not perform well in the search engines. Google likes to see consistency, and anything that may confuse them becomes spam. Best practice is to have one website, that is well optimized, and any other domains should have a 301 redirect to your main website.</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.friendlyNav == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.friendlyNav == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Is your navigation user friendly?</h4>
+                    <p>Over the years SEO has become more about user experience, and less about a checklist of qualifications. This holds true when it comes to your website's navigation. All of your pages should be accessible through your navigation bar, it should be easy to find, it should have crawlable text and not images, and it should flow in an order that makes sense.</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.metaKeywords == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.metaKeywords == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Does your website have meta keywords?</h4>
+                    <p>Meta keywords are an outdated tactic that was once used to help the search engines identify your keyphrases. This no longer has any value and can be considered spam.</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="narrow">
+                    <% fromScore += 1 %>
+                    <% if @phase5.clickToCall == 'yes' %>
+                        <% positiveScore += 1 %>
+                        <div class="score positive"></div>
+                    <% elsif @phase5.clickToCall == 'no' %>
+                        <div class="score negative"></div>
+                    <% else %>
+                        <div class="score"></div>
+                    <% end %>
+                </th>
+                <td>
+                    <h4>Does your website have a click to call button on a mobile device?</h4>
+                    <p>It is important to create a positive experience for your visitors no matter the device they are using. One way to do this is to provide them with one click options! A click to call button allows your visitors to call you with the touch of a button.</p>
+                </td>
+            </tr>
+
+
+        </table>
+
+    </div>
+</div>
+
+
+
+<div class="row trailing-arrows">
+    <div class="small-12 columns">
+        <h3 class="text-center">Overall Score: <span class="blue"> <%= positiveScore %>/<%= fromScore %></span></h3>
+    </div>
+</div>

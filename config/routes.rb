@@ -9,20 +9,21 @@ post 'logout' => 'user_sessions#destroy', :as => :logout
   resources :contacts
   # resources :headers
   # resources :details
-  
+
   resources :verticals
-  
+
   resources :businesses do
-    
+
     resources :phase1s do
         resources :headers, shallow: true
     end
-    
+
     resources :phase2s
     resources :phase3s
     resources :phase4s
+    resources :phase5s
   end
-  
+
   get '/dashboard' => 'pages#dashboard'
   get '/settings' => 'pages#settings'
   get '/help' => 'pages#help'
@@ -31,7 +32,8 @@ post 'logout' => 'user_sessions#destroy', :as => :logout
   get '/phase2' => 'phase2s#index'
   get '/phase3' => 'phase3s#index'
   get '/phase4' => 'phase4s#index'
-  
+  get '/phase5' => 'phase5s#index'
+
   root 'user_sessions#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

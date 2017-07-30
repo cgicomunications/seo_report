@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.integer  "phase1_id"
   end
 
-  add_index "headers", ["phase1_id"], name: "index_headers_on_phase1_id"
+  add_index "headers", ["phase1_id"], name: "index_headers_on_phase1_id", using: :btree
 
   create_table "phase1_pages", force: true do |t|
     t.string   "pageName"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.text     "currentHomeMeta"
   end
 
-  add_index "phase1s", ["business_id"], name: "index_phase1s_on_business_id"
+  add_index "phase1s", ["business_id"], name: "index_phase1s_on_business_id", using: :btree
 
   create_table "phase2s", force: true do |t|
     t.string   "copyHasKeywords"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "titleHasKeywords"
   end
 
-  add_index "phase2s", ["business_id"], name: "index_phase2s_on_business_id"
+  add_index "phase2s", ["business_id"], name: "index_phase2s_on_business_id", using: :btree
 
   create_table "phase3s", force: true do |t|
     t.string   "xmlSitemap"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "conversionOp"
   end
 
-  add_index "phase3s", ["business_id"], name: "index_phase3s_on_business_id"
+  add_index "phase3s", ["business_id"], name: "index_phase3s_on_business_id", using: :btree
 
   create_table "phase4s", force: true do |t|
     t.integer  "business_id"
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "userrank",         default: "sales"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "verticals", force: true do |t|
     t.string   "name"
