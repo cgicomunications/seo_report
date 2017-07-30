@@ -15,22 +15,26 @@ A Ruby on Rails application.
 
 ## Setup
 
-Install the bundler gem
+Install the bundler gem:
 
-`gem install bundler`
+```
+gem install bundler
+```
 
-Use bundler the install the dependent gems
+Use bundler the install the dependent gems:
 
-`bundle install`
+```
+bundle install
+```
 
-Setup your local databases
+Setup your local databases:
 
 ```
 bundle exec rake db:create
 bundle exec rake db:schema:load
 ```
 
-If you are starting from an empty database, start a rails console and create an admin account
+If you are starting from an empty database, start a rails console and create an admin account:
 
 
 ```
@@ -45,15 +49,19 @@ u.password_confirmation = <your password>
 **anything in a <> means you provide the value.*
 
 ## Running the server
-`bundle exec rails s`
+```
+bundle exec rails s
+```
 
 ## Running a console
-`bundle exec rails c`
+```
+bundle exec rails c
+```
 
 ## Deployment
 Capistrano is used for deployment.
 
-Make sure you have the necessary configuration in `config/application.yml`
+Make sure you have the necessary configuration in `config/application.yml`:
 
 ```
 DEPLOY_USER:
@@ -66,10 +74,14 @@ Since this repository is public, this information must be retrieved from another
 
 You must also have your public key installed on the server for the deploy user.
 
-Once you have everything ready, you can deploy with the following command
+Once you have everything ready, you can deploy with the following command:
 
-`cap production deploy`
+```
+cap production deploy
+```
 
-Likewise, for the staging server
+Likewise, for the staging server:
 
-`cap staging deploy`
+```
+cap staging deploy
+```
