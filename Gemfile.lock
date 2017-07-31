@@ -176,6 +176,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano-bundler
   capistrano-db-tasks
   capistrano-figaro
   capistrano-rails
