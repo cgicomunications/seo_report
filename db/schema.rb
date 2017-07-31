@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418181606) do
+ActiveRecord::Schema.define(version: 20170730044415) do
 
   create_table "businesses", force: true do |t|
     t.string   "name"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.integer  "phase1_id"
   end
 
-  add_index "headers", ["phase1_id"], name: "index_headers_on_phase1_id"
+  add_index "headers", ["phase1_id"], name: "index_headers_on_phase1_id", using: :btree
 
   create_table "phase1_pages", force: true do |t|
     t.string   "pageName"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.text     "currentHomeMeta"
   end
 
-  add_index "phase1s", ["business_id"], name: "index_phase1s_on_business_id"
+  add_index "phase1s", ["business_id"], name: "index_phase1s_on_business_id", using: :btree
 
   create_table "phase2s", force: true do |t|
     t.string   "copyHasKeywords"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "titleHasKeywords"
   end
 
-  add_index "phase2s", ["business_id"], name: "index_phase2s_on_business_id"
+  add_index "phase2s", ["business_id"], name: "index_phase2s_on_business_id", using: :btree
 
   create_table "phase3s", force: true do |t|
     t.string   "xmlSitemap"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "conversionOp"
   end
 
-  add_index "phase3s", ["business_id"], name: "index_phase3s_on_business_id"
+  add_index "phase3s", ["business_id"], name: "index_phase3s_on_business_id", using: :btree
 
   create_table "phase4s", force: true do |t|
     t.integer  "business_id"
@@ -130,6 +130,20 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "clickToCall"
   end
 
+  create_table "phase5s", force: true do |t|
+    t.string   "mobile_responsive"
+    t.string   "mobile_contact_info"
+    t.string   "mobile_phone_number"
+    t.string   "mobile_directions"
+    t.string   "mobile_font_size"
+    t.string   "mobile_buttons"
+    t.string   "mobile_navigation"
+    t.string   "mobile_structure"
+    t.integer  "business_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                              null: false
     t.string   "crypted_password"
@@ -140,7 +154,7 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "userrank",         default: "sales"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "verticals", force: true do |t|
     t.string   "name"
