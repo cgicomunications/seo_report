@@ -1,25 +1,14 @@
 class CreatePhase5 < ActiveRecord::Migration
   def change
     create_table :phase5s do |t|
-      t.string   :copyHasKeywords
-      t.string   :freshContent
-      t.string   :imagesNamed
-      t.string   :socialMedia
-      t.string   :googleAnalytics
-      t.string   :webmasterTools
-      t.string   :localBusiness
-      t.string   :optimized
-      t.string   :shortURL
-      t.string   :blackHatFree
-      t.string   :titleHasKeywords
-      t.string   :xmlSitemap
-      t.string   :visitorSitemap
-      t.string   :internalAudit
-      t.string   :contactForm
-      t.string   :map
-      t.string   :favicon
-      t.string   :flashFree
-      t.string   :conversionOp
+      t.string   :mobile_responsive
+      t.string   :mobile_contact_info
+      t.string   :mobile_phone_number
+      t.string   :mobile_directions
+      t.string   :mobile_font_size
+      t.string   :mobile_buttons
+      t.string   :mobile_navigation
+      t.string   :mobile_structure
 
       t.integer :business_id
 

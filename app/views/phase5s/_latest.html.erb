@@ -1,29 +1,39 @@
- <div class="callout card">
+<div class="callout card">
+  <div class="callout-header">
+    <h4>Latest Phase 5</h4>
+  </div>
 
-    <div class="callout-header">
-        <h4>Latest Phase 5</h4>
-    </div>
-    <div class="callout-table">
-        <table>
+  <div class="callout-table">
+    <table>
+      <tbody>
+        <% @phase5s = Phase5.last(5).reverse %>
 
-         <% @phase5s = Phase5.last(5).reverse %>
+        <% @phase5s.each do |phase5| %>
+          <tr>
+            <td class="narrow">
+              <div class="icon-circle"><i class="fa fa-puzzle-piece fa-fw"></i></div>
+            </td>
+            
+            <td>
+              <% @business = Business.where(:id => phase5.business_id).first %>
+              <%= @business.name %><br>
 
-          <% @phase5s.each do |phase5| %>
-                <tr>
-                    <td class="narrow"><div class="icon-circle"><i class="fa fa-puzzle-piece fa-fw"></i></div></td>
-                    <td>
-                        <% @business = Business.where(:id => phase5.business_id).first %>
-                        <%= @business.name %><br>
-                        <small class="time-ago"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(phase5.created_at) %> ago</small>
-                    </td>
-                    <td class="text-right">
-                        <%= link_to '<i class="fa fa-ellipsis-v fa-fw"></i>'.html_safe, business_phase5_path(@business, phase5) %>
-                    </td>
-                </tr>
-            <% end %>
-        </table>
-    </div>
-    <div class="callout-footer">
-        <%= link_to 'See all Phase 5', phase5_path, class: 'card expanded link' %>
-    </div>
+              <small class="time-ago">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <%= time_ago_in_words(phase5.created_at) %> ago
+              </small>
+            </td>
+
+            <td class="text-right">
+              <%= link_to '<i class="fa fa-ellipsis-v fa-fw"></i>'.html_safe, business_phase5_path(@business, phase5) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout-footer">
+    <%= link_to 'See all Phase 5', phase5_path, class: 'card expanded link' %>
+  </div>
 </div>

@@ -56,6 +56,8 @@ class Phase5sController < ApplicationController
   private
 
   def phase5_params
-    params.require(:phase5).permit(:blog, :video, :sslcertificate, :duplicateSites, :friendlyNav, :metaKeywords, :clickToCall)
+    params.require(:phase5).permit(:mobile_responsive, :mobile_contact_info, :mobile_phone_number,
+                                   :mobile_directions, :mobile_font_size, :mobile_buttons,
+                                   :mobile_navigation, :mobile_structure)
   end
 end

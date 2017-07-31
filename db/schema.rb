@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418181606) do
+ActiveRecord::Schema.define(version: 20170730044415) do
 
   create_table "businesses", force: true do |t|
     t.string   "name"
@@ -128,6 +128,20 @@ ActiveRecord::Schema.define(version: 20170418181606) do
     t.string   "friendlyNav"
     t.string   "metaKeywords"
     t.string   "clickToCall"
+  end
+
+  create_table "phase5s", force: true do |t|
+    t.string   "mobile_responsive"
+    t.string   "mobile_contact_info"
+    t.string   "mobile_phone_number"
+    t.string   "mobile_directions"
+    t.string   "mobile_font_size"
+    t.string   "mobile_buttons"
+    t.string   "mobile_navigation"
+    t.string   "mobile_structure"
+    t.integer  "business_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
