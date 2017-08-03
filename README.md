@@ -70,17 +70,23 @@ DEPLOY_DOMAIN:
 DEPLOY_TO:
 ```
 
-Since this repository is public, this information must be retrieved from another developer.
+Since this repository is public, this information must be retrieved from your IT department.
 
 You must also have your public key installed on the server for the deploy user.
+This can be performed by your IT department.
 
 Once you have everything ready, you can deploy with the following command:
+#### Production
+Deploying to production will always use the `master` branch of the repository.
 
 ```
 cap production deploy
 ```
 
-Likewise, for the staging server:
+#### Staging
+Deploying to staging will prompt you for the branch you'd like to deploy.
+This is useful if you are testing out new code in staging before deploying to production.
+Otherwise, if you just hit enter it will just deploy the `master` branch.
 
 ```
 cap staging deploy

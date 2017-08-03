@@ -14,6 +14,8 @@ append :linked_files, 'config/application.yml', 'config/database.yml'
 # Skip migration if files in db/migrate were not modified
 set :conditionally_migrate, true
 
+set :passenger_restart_with_touch, true
+
 # capistrano-db-tasks
 set :disallow_pushing, true
 set :db_remote_clean, false

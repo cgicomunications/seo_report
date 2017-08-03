@@ -29,6 +29,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-db-tasks', require: false
   gem 'capistrano-figaro'
+  gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rvm', require: false
 
