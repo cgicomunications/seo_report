@@ -13,7 +13,13 @@
 <% end %>
 
 <div class="report-header <%= branding %>">
-    <h1>Phase <%= params[:phase] %></h1>
+  <h1>
+    <% if params[:phase] == '5' %>
+      MOBILE SEO REPORT
+    <% else %>
+      Phase <%= params[:phase] %>
+    <% end %>
+  </h1>
 </div>
 
 <% if params[:phase] == '1' %>
