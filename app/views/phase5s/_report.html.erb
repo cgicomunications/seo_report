@@ -1,0 +1,220 @@
+<% positiveScore = 0 %>
+<% fromScore = 0 %>
+<% @phase5 = Phase5.where(:id => params[:id]).first %>
+
+<div class="row lead-img"data-equalizer data-equalize-on="medium">
+  <div class="medium-3 columns burst" data-equalizer-watch></div>
+  <div class="medium-9 columns" data-equalizer-watch>
+    <h1 class="business-name"><%= Business.find(@phase5.business_id).name %></h1>
+    <p class="lead">
+      In the summer of 2015, mobile searches surpassed desktop searches for the first time.
+      A mobile website is imperative to a business’ success as over 100 billion searches are performed on a mobile device every month.
+      In this report we will take a look at your mobile website.
+      We will look at the user friendliness, the UX design and many other key elements.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h2 class="text-center">Analysis</h2>
+
+    <table class="scores">
+      <tbody>
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_responsive == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_responsive == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Is your website mobile responsive?</h4>
+            <p>
+              Responsive web design allows the website to resize and reformat automatically,
+              regardless of the screen size or device being used. A responsive design is the
+              favored form of web design in this day and age.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_contact_info == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_contact_info == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Is the contact information on your mobile website above the fold?</h4>
+            <p>
+              Much like a desktop site, we want your name, address and phone number to be
+              above the fold on a mobile device. Having your key information in a location
+              that is easy to find will increase conversions and provide a better user
+              experience for your visitors.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_phone_number == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_phone_number == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Is the phone number on your mobile website click to call?</h4>
+            <p>
+              In this day and age it is all about convenience and making phone calls is no
+              exception! When a visitor is on your website, we want to ensure they can call
+              your business with just the click of a button.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_directions == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_directions == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Does your mobile website have a click for directions feature?</h4>
+            <p>
+              Much like the convenience of a click to call button, we want your website
+              visitors to be able to find directions to your establishment with one click.
+              This button should link to Google Maps for ease of navigation.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_font_size == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_font_size == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Is the font of your mobile website too small to read without zooming?</h4>
+            <p>
+              A mobile website that is developed properly should adjust to your screen size so
+              the visitor does not have to zoom, or pinch, to read the text. If your text is
+              too small or hard to read, we risk the visitor bouncing off the site.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_buttons == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_buttons == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Are the buttons and links on your mobile website too close together?</h4>
+            <p>
+              If the links and/or buttons on your website are too difficult to click, we are
+              creating a negative user experience. Much like the text of your site, we don’t
+              want visitors to have to zoom in to click on the touch elements.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_navigation == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_navigation == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Is your mobile website easy to navigate?</h4>
+            <p>
+              You are always hearing about the importance of user friendliness and user
+              experience, but what does that actually mean?
+              A site should be easy to navigate throughout.
+              Your visitor should be able to find what they are looking for within seconds,
+              or we risk losing them.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="narrow">
+            <% fromScore += 1 %>
+            <% if @phase5.mobile_structure == 'yes' %>
+              <% positiveScore += 1 %>
+              <div class="score positive"></div>
+            <% elsif @phase5.mobile_structure == 'no' %>
+              <div class="score negative"></div>
+            <% else %>
+              <div class="score"></div>
+            <% end %>
+          </th>
+
+          <td>
+            <h4>Is there still a structure and hierarchy to the content on your mobile website?</h4>
+            <p>
+              Your mobile website should in essence be a shrunken down
+              version of your desktop website.
+              It should be structured the same way for not only user experience,
+              but brand recongition.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row trailing-arrows">
+  <div class="small-12 columns">
+    <h3 class="text-center">Overall Score: <span class="blue"> <%= positiveScore %>/<%= fromScore %></span></h3>
+  </div>
+</div>
