@@ -27,14 +27,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
+    if @user.save && (@user = login(user_params[:email], user_params[:password]))
       flash[:success] = "User added."
+      
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Error occured, user not added."
+      
+      redirect_to(new_user_session_path)
     end
-    
-    redirect_to user_path(@user)
-  
   end
 
   # PATCH/PUT /users/1
