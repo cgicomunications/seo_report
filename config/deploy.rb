@@ -5,7 +5,6 @@ set :application, 'seo_report'
 
 set :user,        ENV['DEPLOY_USER']
 set :domain,      ENV['DEPLOY_DOMAIN']
-set :deploy_to,   ENV['DEPLOY_TO']
 set :repo_url,    'git@github.com:cgicomunications/seo_report.git'
 set :rvm_ruby_version, '2.3.4'
 

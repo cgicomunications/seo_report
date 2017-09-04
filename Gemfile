@@ -16,10 +16,12 @@ gem 'sorcery'
 gem 'sprockets', '3.6.3'
 gem 'therubyracer'
 gem 'uglifier', '~> 2.7'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary-edge'
 
 # Frontend
 gem 'coffee-rails', '4.0.0'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 4.7.0'
 gem 'foundation-rails', '6.3.0.0'
 gem 'jquery-rails'
 gem 'sass-rails'

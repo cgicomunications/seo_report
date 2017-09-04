@@ -1,5 +1,6 @@
 set :rails_env, 'production'
 set :branch, 'master'
+set :deploy_to,   "#{ENV['DEPLOY_TO']}/#{fetch(:rails_env)}"
 
 # server-based syntax
 # ======================

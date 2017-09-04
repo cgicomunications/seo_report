@@ -1,5 +1,6 @@
 set :rails_env, 'staging'
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :deploy_to,   "#{ENV['DEPLOY_TO']}/#{fetch(:rails_env)}"
 
 # server-based syntax
 # ======================

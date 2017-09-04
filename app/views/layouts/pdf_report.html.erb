@@ -7,18 +7,14 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "SEO Report" %></title>
 
-    <%= stylesheet_link_tag    "application", media: "screen, print" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= wicked_pdf_stylesheet_link_tag    "application", media: "screen, print" %>
+    <%= wicked_pdf_javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href='https://fonts.googleapis.com/css?family=Oswald|Roboto:400,400italic|Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   </head>
 
   <body class="report">
-    <%= link_to 'View Printable PDF',
-                display_path(format: :pdf, id: params[:id], phase: params[:phase]),
-                class: 'printBtn', target: '_blank' %>
-
     <!-- Page content -->
     <%= yield %>
   </body>
