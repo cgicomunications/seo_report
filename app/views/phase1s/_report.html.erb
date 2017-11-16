@@ -11,23 +11,31 @@
 
 
 <div class="row">
-    <div class="small-12 columns">
-        <h3 class="text-center">About Title Tags</h3>
-        
-        <p class="lead">A title tag is the single most important on-site SEO element. This tells the search engines exactly what your website is about, what you do and where you are located. This is what a title tag shows up as in search results:</p>
-        
-        <%= image_tag("title.png", :class => "imgspace") %>
-    </div>
+  <div class="small-12 columns">
+    <h3 class="text-center">About Title Tags</h3>
+    
+    <p class="lead">A title tag is the single most important on-site SEO element. This tells the search engines exactly what your website is about, what you do and where you are located. This is what a title tag shows up as in search results:</p>
+    
+    <% if @format == 'html' %>
+      <%= image_tag("title.png", :class => "imgspace") %>
+    <% else %>
+      <%= wicked_pdf_image_tag("title.png", :class => "imgspace") %>
+    <% end %>
+  </div>
 </div>
 
 <div class="row">
-    <div class="small-12 columns">
-        <h3 class="text-center">About Description Tag</h3>
-        
-        <p class="lead">Descriptions tags are used to tell the searcher what they will find when they click on your website. This  tag serves the function of advertising copy, drawing readers to a website from the results. This is how a meta description shows up in search results:</p>
-        
-        <%= image_tag("meta.png", :class => "imgspace") %>
-    </div>
+  <div class="small-12 columns">
+    <h3 class="text-center">About Description Tag</h3>
+    
+    <p class="lead">Descriptions tags are used to tell the searcher what they will find when they click on your website. This  tag serves the function of advertising copy, drawing readers to a website from the results. This is how a meta description shows up in search results:</p>
+
+    <% if @format == 'html' %>
+      <%= image_tag("meta.png", :class => "imgspace") %>
+    <% else %>
+      <%= wicked_pdf_image_tag("meta.png", :class => "imgspace") %>
+    <% end %>
+  </div>
 </div>
 
 <div class="pageBreak"></div>
@@ -152,4 +160,4 @@
 
 
         
-<%= render 'businesses/mobile' %>
+<%= render 'businesses/mobile', phase: @phase1 %>

@@ -523,16 +523,18 @@ th + td{
      position:relative;
 }
 
-.meta-count{
-    position:absolute;
-    right:.75em;
-    top:.9em;
-    color:#fff;
-    background:$grey;
-    height: 3.1em;
-    line-height:3em;
-    padding:0 1em;
-    border:1px solid $grey;
+.meta-count {
+    /* position: absolute; */
+    /* right: .75em; */
+    /* top: 5em; */
+    color: #fff;
+    background: $grey;
+    height: 2.4em;
+    line-height: 3em;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 35px;
+    border: 1px solid #cacaca;
 }
 
 .count{
@@ -811,7 +813,7 @@ th + td{
         }
         
         p{
-            color:$grey !important;
+            color:$mid-grey !important;
         }
     }
     

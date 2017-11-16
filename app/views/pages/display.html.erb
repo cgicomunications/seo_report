@@ -1,14 +1,14 @@
 <% branding = "" %>
 <% if params[:phase] == '1' %>
-    <% branding  = Business.find(Phase1.where(:id => params[:id]).first.business_id).branding; %>
+  <% branding  = Business.find(Phase1.where(:id => params[:id]).first.business_id).branding; %>
 <% elsif params[:phase] == '2' %>
-    <% branding  = Business.find(Phase2.where(:id => params[:id]).first.business_id).branding; %>
+  <% branding  = Business.find(Phase2.where(:id => params[:id]).first.business_id).branding; %>
 <% elsif params[:phase] == '3' %>
-    <% branding  = Business.find(Phase3.where(:id => params[:id]).first.business_id).branding; %>
+  <% branding  = Business.find(Phase3.where(:id => params[:id]).first.business_id).branding; %>
 <% elsif params[:phase] == '4' %>
-    <% branding  = Business.find(Phase4.where(:id => params[:id]).first.business_id).branding; %>
+  <% branding  = Business.find(Phase4.where(:id => params[:id]).first.business_id).branding; %>
 <% elsif params[:phase] == '5' %>
-    <% branding  = Business.find(Phase5.where(:id => params[:id]).first.business_id).branding; %>
+  <% branding  = Business.find(Phase5.where(:id => params[:id]).first.business_id).branding; %>
 <% else %>
 <% end %>
 
