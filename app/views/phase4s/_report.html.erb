@@ -114,25 +114,8 @@
                     <% end %>
                 </th>
                 <td>
-                    <h4>Does your website have meta keywords?</h4>
+                    <h4>Is your website free of meta keywords</h4>
                     <p>Meta keywords are an outdated tactic that was once used to help the search engines identify your keyphrases. This no longer has any value and can be considered spam.</p>
-                </td>
-            </tr>
-            <tr>
-                <th class="narrow">
-                    <% fromScore += 1 %>
-                    <% if @phase4.clickToCall == 'yes' %>
-                        <% positiveScore += 1 %>
-                        <div class="score positive"></div>
-                    <% elsif @phase4.clickToCall == 'no' %>
-                        <div class="score negative"></div>
-                    <% else %>
-                        <div class="score"></div>
-                    <% end %>
-                </th>
-                <td>
-                    <h4>Does your website have a click to call button on a mobile device?</h4>
-                    <p>It is important to create a positive experience for your visitors no matter the device they are using. One way to do this is to provide them with one click options! A click to call button allows your visitors to call you with the touch of a button.</p>
                 </td>
             </tr>
            
